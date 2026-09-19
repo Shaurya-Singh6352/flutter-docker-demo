@@ -28,3 +28,19 @@ A GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push and pu
 - Builds the Docker image
 
 ![CI passing](screenshots/ci-green.png)
+
+## Multi-Service Stack (Docker Compose)
+
+Three services orchestrated with a single command:
+- `db` — PostgreSQL, seeded with sample data on first startup
+- `api` — Node.js/Express, queries the database and exposes it at `/message`
+- `flutter-app` — the Flutter web app, served via nginx
+
+Run everything with:
+docker compose up --build
+
+- Flutter app: http://localhost:8080
+- API (proves service-to-service communication): http://localhost:3000/message
+
+![All services running](screenshots/compose-ps.png)
+![API response](screenshots/api-message.png)
