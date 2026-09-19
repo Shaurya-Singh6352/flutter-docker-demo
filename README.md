@@ -18,3 +18,13 @@ Then open http://localhost:8080
 
 ## Screenshots
 (add your screenshots here)
+
+## CI/CD
+
+A GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push and pull request to `main`:
+- Installs dependencies
+- Runs `flutter test`
+- Builds the web app
+- Builds the Docker image
+
+![CI passing](screenshots/ci-green.png)
