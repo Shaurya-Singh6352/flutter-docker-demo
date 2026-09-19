@@ -31,3 +31,6 @@ jobs:
       - name: Build web
         working-directory: app
         run: flutter build web --release
+
+      - name: Build Docker image
+        run: docker build -t flutter-docker-demo .
